@@ -51,10 +51,8 @@ public class RandomArray {
 				}
 				break;
 			case GENTYPE_WORST_CASE:
-				int index = 0;
 				for(int i = length; i >= 1; i--) {
-					array[index] = i;
-					index++;
+					array[length - i] = i;
 				}
 				break;
 			case GENTYPE_BEST_CASE:

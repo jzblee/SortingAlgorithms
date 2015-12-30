@@ -18,9 +18,9 @@ public class SortApp {
 	/*
 	 * These values should be set by the user in the future.
 	 */
-	static int size = 20;
-	static int sortIncrement = 1;
-	static int sortRapidInterval = 10;
+	static int size = 20; // number of elements in the random dataset
+	static int stepIncrement = 1; // each "step" runs this number of iterations
+	static int sortRapidInterval = 10; // number of milliseconds between rapid-steps
 	
 	static JButton normBtn, stepBtn, rapidBtn, scrambleBtn;
 	
@@ -67,7 +67,7 @@ public class SortApp {
         {
         	  public void actionPerformed(ActionEvent e)
         	  {
-        		  sortOp.stepSort(sortIncrement);
+        		  sortOp.stepSort(stepIncrement);
         		  refreshGraphPanel();
         	  }
         });
@@ -77,7 +77,7 @@ public class SortApp {
         {
       	  public void actionPerformed(ActionEvent e)
       	  {
-      		sortOp.stepSort(sortIncrement);
+      		sortOp.stepSort(stepIncrement);
       		if (sortOp.sortDone()){
   			  rapidTimer.stop();
   		    }
